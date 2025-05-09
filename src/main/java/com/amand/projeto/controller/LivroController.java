@@ -24,9 +24,12 @@ public class LivroController {
         return livroRepository.save(livro);
     }
 
+
+
     @DeleteMapping("/{id}")
-        public void removerLivro(@PathVariable Long id){
+        public String removerLivro(@PathVariable Long id){
             livroRepository.deleteById(id);
+            return "Apagado com sucesso!";
         }
     }
 
